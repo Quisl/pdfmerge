@@ -20,7 +20,7 @@ def readArgs():
         print("Missing PDF file names in parameter.")
         exit()
 
-def main():
+def mergePDFs():
     """
     Main loop
     """
@@ -30,7 +30,6 @@ def main():
     try:
         for pdf in pdfs:
             merger.append(open(pdf, 'rb'))
-
         with open(FILENAME, 'wb') as fout:
             merger.write(fout)
     except PdfReadError as e:
@@ -40,4 +39,4 @@ def main():
     print("Successfully merged PDF files into '"+FILENAME+"'")
 
 if __name__ == "__main__":
-    main()
+    mergePDFs()
