@@ -23,3 +23,5 @@ Example:
 ```
 $ python pdfmerge.py filename1.pdf filename2.pdf filename3.pdf
 ```
+
+The resulting filename will be "result.pdf"
