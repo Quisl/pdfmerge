@@ -33,12 +33,12 @@ def mergePDFs():
         with open(FILENAME, 'wb') as fout:
             merger.write(fout)
     except PdfReadError as notPdf:
-        print (notPdf)
-        print ("Are you sure all of these are PDF files?!")
+        print(notPdf)
+        print("Are you sure all of these are PDF files?!")
         exit()
     except FileNotFoundError as noFile:
-        print (noFile)
-        print ("Try entering existing files")
+        print(noFile)
+        print("Try entering existing files")
         exit()
     print("Successfully merged PDF files into '"+FILENAME+"'")
 
