@@ -9,7 +9,8 @@ from PyPDF2.utils import PdfReadError
 
 FILENAME = "result.pdf"
 
-def readArgs():
+
+def read_args():
     """
     Returns values from args in a list.
     """
@@ -20,11 +21,12 @@ def readArgs():
         print("Missing PDF file names in parameter.")
         exit()
 
-def mergePDFs():
+
+def merge_pdfs():
     """
     Main loop
     """
-    pdfs = readArgs()
+    pdfs = read_args()
     merger = PdfFileMerger()
 
     try:
@@ -32,15 +34,16 @@ def mergePDFs():
             merger.append(open(pdf, 'rb'))
         with open(FILENAME, 'wb') as fout:
             merger.write(fout)
-    except PdfReadError as notPdf:
-        print(notPdf)
+    except PdfReadError as not_pdf:
+        print(not_pdf)
         print("Are you sure all of these are PDF files?!")
         exit()
-    except FileNotFoundError as noFile:
-        print(noFile)
+    except FileNotFoundError as no_file:
+        print(no_file)
         print("Try entering existing files")
         exit()
     print("Successfully merged PDF files into '"+FILENAME+"'")
 
+
 if __name__ == "__main__":
-    mergePDFs()
+    merge_pdfs()
